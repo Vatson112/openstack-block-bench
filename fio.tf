@@ -45,10 +45,11 @@ resource "null_resource" "run_fio_client" {
   count = var.instance_num
 
   provisioner "local-exec" {
-    command = format("fio --output %s/%s/%s --client=%s fio/%s",
+    command = format("fio --output %s/%s/%s --output-format %s --client=%s fio/%s",
       var.results_dir,
       var.test_type,
       count.index,
+      var.fio_output_format,
       openstack_compute_instance_v2.my_instance[count.index].access_ip_v4,
       var.test_type
     )
