@@ -4,7 +4,7 @@ buffered=0
 ioengine=libaio
 time_based=1
 group_reporting
-runtime=30s
+runtime=30m
 bs=8k/16k/64k
 rw=randrw
 rwmixread=20/50/80
