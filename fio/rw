@@ -1,0 +1,14 @@
+[global]
+direct=1
+buffered=0
+ioengine=libaio
+time_based=1
+group_reporting
+runtime=30s
+bs=8k/16k/64k
+rw=randrw
+rwmixread=20/50/80
+iodepth=1
+numjobs=4
+[job1]
+filename=/dev/sdb
