@@ -56,3 +56,20 @@ resource "null_resource" "run_fio_client" {
   }
 
 }
+
+resource "null_resource" "fix_fio_resuls" {
+  depends_on = [null_resource.run_fio_client]
+  triggers = {
+    a = timestamp()
+  }
+  count = var.instance_num
+
+  provisioner "local-exec" {
+    command = format("sed -i '1,/^$/d' %s/%s/%s",
+      var.results_dir,
+      var.test_type,
+      count.index,
+    )
+  }
+
+}
