@@ -35,8 +35,10 @@ terraform init
 
 4. Запустить
 
+Обязательно задать паралелизм равный кол-ву инстансов (instance_num). По умолчанию у terraform parellelism=10.
+
 ```bash
-terraform apply
+terraform apply -parallelism=n
 ```
 
 ### Описание переменных

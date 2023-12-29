@@ -4,8 +4,8 @@ buffered=0
 ioengine=libaio
 time_based=1
 group_reporting
-runtime=5h
-bs=256k
+runtime=72h
+bs=512k
 rw=write
 iodepth=1
 numjobs=1

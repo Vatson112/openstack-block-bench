@@ -23,6 +23,7 @@ resource "null_resource" "run_fio_server" {
       "sudo restorecon  /etc/systemd/system/fio-server.service",
       "sudo systemctl daemon-reload",
       "sudo systemctl start fio-server.service",
+      "sleep 60"
     ]
   }
 }

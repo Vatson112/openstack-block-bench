@@ -4,11 +4,12 @@ buffered=0
 ioengine=libaio
 time_based=1
 group_reporting
-runtime=30m
-bs=8k/16k/64k
+runtime=1h
+bssplit=4k/15:8k/50:16k/20:32k/10:64k/5
 rw=randrw
-rwmixread=20/50/80
+rwmixread=70
 iodepth=1
-numjobs=4
+numjobs=1
+
 [job1]
 filename=/dev/sdb
